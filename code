@@ -1,0 +1,22 @@
+import java.util.Scanner; //import Scanner class so we can get user input
+public class FindTheFactorial {  //name the class
+public static void main(String args[]){  //start the main method
+
+Scanner s = new Scanner(System.in); //create the scanner
+System.out.println("Enter your number:"); //tell user to enter a number
+
+int input_num = s.nextInt(); //read the input as an integer and save in a variable
+int factorial = calculate_factorial(input_num); //calculate factorial with the method outlined below
+System.out.println("Factorial of entered number is: "+factorial); print answer to sceen
+}
+static int calculate_factorial(int input_num)//the method fo calculating the factorial that we call in the main method above
+{
+int output;
+if(input_num==1){
+return 1; //the factorial of 1 is 1
+}
+
+output = calculate_factorial(input_num-1)* input_num; //otherwise multiply the given number by the number before it recursively
+return output;
+}
+}
